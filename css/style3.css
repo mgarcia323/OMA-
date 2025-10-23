@@ -346,7 +346,7 @@ border: 5px solid #ffb6dc;  background: #e73292;
   font-family: 'JetBrains Mono', monospace;
   font-size: 32px;
   font-weight: 900;
-  margin-bottom: 3px;
+  margin-bottom: 16px;
   margin-top: 0;
   letter-spacing: 2px;
 }
@@ -570,4 +570,5 @@ border: 5px solid #ffb6dc;  background: #e73292;
   .footer-menu, .footer-bottom {
     max-width: 94vw;
   }
+
 }
