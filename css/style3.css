@@ -346,8 +346,8 @@ border: 5px solid #ffb6dc;  background: #e73292;
   font-family: 'JetBrains Mono', monospace;
   font-size: 32px;
   font-weight: 900;
-  margin-bottom: 16px;
-  margin-top: 0;
+  margin-bottom: 3px;
+  margin-top: 40px;
   letter-spacing: 2px;
 }
 .popup-rol {
@@ -572,3 +572,4 @@ border: 5px solid #ffb6dc;  background: #e73292;
   }
 
 }
+
