@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diegovillart</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#fff;--text:#111;--muted:#666;--line:#eaeaea;--shadow:0 12px 32px rgba(0,0,0,.08);--accent:#000}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+
+    /* LOGO + NAVBAR */
+    .logo-container{display:flex;flex-direction:column;align-items:center;padding:40px 0;}
+    .logo-container img{height:60px;margin-bottom:16px}
+    .navbar{display:flex;gap:32px;font-weight:600;font-size:1rem;}
+
+    .banner{height:60vh;overflow:hidden;border-bottom:1px solid var(--line)}
+    .banner img{width:100%;height:100%;object-fit:cover}
+
+    .intro{text-align:center;padding:48px 20px;color:var(--muted);border-bottom:1px solid var(--line)}
+
+    .container{max-width:1200px;margin:0 auto;padding:48px 20px}
+
+    /* Galería estilo Pinterest con columnas CSS */
+    .masonry{column-count:3;column-gap:24px;}
+    @media(max-width:960px){.masonry{column-count:2}}
+    @media(max-width:600px){.masonry{column-count:1}}
+
+    .item{position:relative;break-inside:avoid;margin-bottom:24px;overflow:hidden;box-shadow:var(--shadow);cursor:pointer;opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+    .item.revealed{opacity:1;transform:translateY(0)}
+    .item img{width:100%;display:block}
+
+    .reveal{position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.95);padding:16px;transform:translateY(100%);transition:transform .35s ease}
+    .item:hover .reveal{transform:translateY(0)}
+    .reveal h3{font-size:1rem;margin-bottom:4px}
+    .reveal span{font-size:.9rem;color:var(--muted);display:block;margin-bottom:12px}
+    .reveal button{width:100%;background:#000;color:#fff;padding:10px;font-weight:600;border:none;cursor:pointer}
+
+    /* Sold ribbon centered horizontally */
+    .sold {    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra horizontal y vertical */
+    width: 90%;
+    max-width: 500px;
+    height: 40px;
+    background-color: black;
+    color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    pointer-events: none;
+    z-index: 10;
+    text-transform: uppercase;
+    border-radius: 4px;}
+
+    /* Footer minimalista */
+    footer{background:#111;color:#fff;padding:80px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px}
+    .footer-socials{display:flex;gap:24px}
+    .footer-socials a{color:#fff;font-size:1.5rem;transition:color .3s}
+    .footer-socials a:hover{color:var(--accent)}
+
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.3);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+    .modal{background:#fff;padding:24px;max-width:420px;width:100%;box-shadow:var(--shadow);position:relative}
+    .modal h2{margin-bottom:8px}
+    .modal p{color:var(--muted);margin-bottom:20px}
+    .btn{display:block;width:100%;text-align:center;background:#000;color:#fff;padding:14px;font-weight:600;border:none}
+    .close{position:absolute;top:14px;right:14px;background:#000;color:#fff;border:none;padding:6px 10px}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- LOGO + NAVBAR -->
+<div class="logo-container">
+  <img src="IMG/logo2.png" alt="Logo Negro">
+  <nav class="navbar">
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</div>
+
+<section class="banner">
+  <img src="IMG/hero.jpg">
+</section>
+
+<section class="intro">
+  <p>Diego retrata esculturas con fuerza y urbanismo</p>
+</section>
+
+<section id="galeria" class="container">
+  <div class="masonry">
+
+    <div class="item">
+      <img src="IMG/Gemini_Generated_Image_x0jmj4x0jmj4x0jm.jpg">
+      <div class="reveal">
+        <h3>Angel</h3>
+        <span>Precio: 1.300.000$ (100CM x 70CM)</span>
+        <button>Comprar</button>
+      </div>
+      <div class="sold">VENDIDO</div>
+    </div>
+
+    <div class="item">
+      <img src="IMG/5 2.png">
+      <div class="reveal">
+        <h3>David 1 (150CM x 100CM)</h3>
+        <span>Precio: 2.500.000$</span>
+        <button>Comprar</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="IMG/5 3.png">
+      <div class="reveal">
+        <h3>Manos Urbanas (150CM x 100CM)</h3>
+        <span>Precio: 2.000.000$</span>
+        <button>Comprar</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="IMG/5 4.png">
+      <div class="reveal">
+        <h3>Mano de David</h3>
+        <span>Precio:1.400.000(120CM x 80CM) </span>
+        <button>Comprar</button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="IMG/5.jpg">
+      <div class="reveal">
+        <h3>David 2</h3>
+        <span>Precio: 1.300.000$(100CM X 70CM)</span>
+        <button>Comprar</button>
+      </div>
+      <div class="sold">VENDIDO</div>
+    </div>
+
+    <div class="item">
+      <img src="Diego_VIlla.png">
+      <div class="reveal">
+        <h3>David Bandalizado</h3>
+        <span>Precio:1.800.000 (100CM x 80CM)</span>
+        <button>Comprar</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/diegovillart/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://wa.me/573188850081" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p>&copy; 2025 Diego. Todos los derechos reservados.</p>
+</footer>
+
+<div class="modal-backdrop" id="modal">
+  <div class="modal">
+    <button class="close" id="close">×</button>
+    <h2 id="modal-title"></h2>
+    <p id="modal-price"></p>
+    <button id="modal-buy" class="btn">Comprar</button>
+  </div>
+</div>
+
+<script>
+  const WHATSAPP_NUMBER = '573188850081';
+  const BASE_MESSAGE = 'Hola, me interesa la obra';
+
+  function sendToWhatsApp(title){
+    const message = `${BASE_MESSAGE} ${title}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(url,'_blank');
+  }
+
+  const items = document.querySelectorAll('.item');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  items.forEach(item => obs.observe(item));
+
+  const modal = document.getElementById('modal');
+  const titleEl = document.getElementById('modal-title');
+  const priceEl = document.getElementById('modal-price');
+  const buyBtn = document.getElementById('modal-buy');
+
+  items.forEach(item => {
+    const buyButton = item.querySelector('.reveal button');
+
+    // Evento para el botón de compra en desktop/mobile directo
+    buyButton.addEventListener('click', e => {
+      e.stopPropagation(); // evita que también abra el modal
+      const title = item.querySelector('h3').textContent;
+      sendToWhatsApp(title);
+    });
+
+    // Evento para abrir modal en mobile
+    item.addEventListener('click', () => {
+      if(window.innerWidth <= 768){
+        const title = item.querySelector('h3').textContent;
+        const price = item.querySelector('span').textContent;
+
+        titleEl.textContent = title;
+        priceEl.textContent = price;
+        buyBtn.onclick = () => sendToWhatsApp(title);
+
+        modal.style.display = 'flex';
+      }
+    });
+  });
+
+  document.getElementById('close').onclick = () => modal.style.display = 'none';
+  modal.onclick = e => { if(e.target === modal) modal.style.display = 'none'; };
+</script>
+
+</body>
+</html>
